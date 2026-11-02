@@ -1,0 +1,8 @@
+{
+  "name": "Advannotech PMI Document Generator",
+  "description": "Stateless enterprise document generator for Advannotech. Extracts multi-format project artifacts client-side, conducts automated gap analysis against ISO 21500 & PMBOK 7th standards, and drafts audit-ready formal project governance documents.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

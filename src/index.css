@@ -1,0 +1,289 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.5);
+}
+
+/* Markdown styling in preview */
+.prose-advannotech {
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+
+.prose-advannotech h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  border-bottom: 2px solid #00A3FF;
+  padding-bottom: 0.5rem;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.prose-advannotech h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #38BDF8;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.prose-advannotech h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #93C5FD;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-advannotech p {
+  margin-bottom: 0.85rem;
+  color: #cbd5e1;
+}
+
+.prose-advannotech ul, .prose-advannotech ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose-advannotech ul {
+  list-style-type: square;
+}
+
+.prose-advannotech ol {
+  list-style-type: decimal;
+}
+
+.prose-advannotech li {
+  margin-bottom: 0.35rem;
+}
+
+.prose-advannotech table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.prose-advannotech th {
+  background-color: #0F172A;
+  color: #00E5FF;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #334155;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.prose-advannotech td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+  vertical-align: top;
+}
+
+.prose-advannotech tr:nth-child(even) td {
+  background-color: rgba(15, 23, 42, 0.5);
+}
+
+.prose-advannotech blockquote {
+  border-left: 3px solid #00E5FF;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #94a3b8;
+  margin: 1rem 0;
+}
+
+.prose-advannotech strong {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.prose-advannotech hr {
+  border: 0;
+  border-top: 1px solid #334155;
+  margin: 2rem 0;
+}
+
+/* Print utility classes for screen */
+.print-only {
+  display: none;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+/* Print Stylesheet for Formal Multi-Page PDF */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 20mm 15mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10.5pt !important;
+    line-height: 1.5 !important;
+  }
+
+  .no-print,
+  nav,
+  aside,
+  header,
+  .app-header,
+  .app-stepper,
+  .print-hide {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .document-print-container {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .document-print-container * {
+    color: #0f172a !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .print-page-break {
+    page-break-before: always;
+  }
+
+  .print-avoid-break {
+    page-break-inside: avoid;
+  }
+
+  .prose-advannotech h1 {
+    color: #0b1528 !important;
+    border-bottom: 2pt solid #0f172a !important;
+    font-size: 18pt !important;
+  }
+
+  .prose-advannotech h2 {
+    color: #0f172a !important;
+    border-bottom: 1pt solid #94a3b8 !important;
+    font-size: 14pt !important;
+    page-break-after: avoid;
+  }
+
+  .prose-advannotech h3 {
+    color: #1e293b !important;
+    font-size: 12pt !important;
+    page-break-after: avoid;
+  }
+
+  .prose-advannotech table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    page-break-inside: avoid;
+    font-size: 9pt !important;
+  }
+
+  .prose-advannotech th {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    border: 1pt solid #cbd5e1 !important;
+    font-weight: bold !important;
+  }
+
+  .prose-advannotech td {
+    border: 1pt solid #e2e8f0 !important;
+    color: #0f172a !important;
+  }
+
+  .prose-advannotech tr:nth-child(even) td {
+    background-color: #f8fafc !important;
+  }
+
+  /* Formal Page Elements */
+  .document-header-print {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2pt solid #0b1528;
+    padding-bottom: 10pt;
+    margin-bottom: 20pt;
+  }
+
+  .document-footer-print {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1pt solid #cbd5e1;
+    padding-top: 5pt;
+    font-size: 8pt;
+    color: #64748b;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .signature-block {
+    margin-top: 40pt;
+    display: grid;
+    grid-template-cols: 1fr 1fr;
+    gap: 40pt;
+    page-break-inside: avoid;
+  }
+
+  .signature-line {
+    border-top: 1pt solid #0f172a;
+    margin-top: 40pt;
+    padding-top: 5pt;
+    font-size: 9pt;
+    font-weight: bold;
+  }
+
+  /* Force page breaks for specific elements if needed */
+  .appendix-start {
+    page-break-before: always;
+  }
+}
